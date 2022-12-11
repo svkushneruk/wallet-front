@@ -1,0 +1,66 @@
+@import-normalize; /* bring in normalize.css styles */
+
+@font-face {
+  font-family: 'Poppins';
+  src: local('Poppins'),
+    url('./assets/fonts/poppins/Poppins-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: local('Poppins'),
+    url('./assets/fonts/poppins/Poppins-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Circe';
+  src: local('Circe'),
+    url('./assets/fonts/circe/Circe-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Circe';
+  src: local('Circe'),
+    url('./assets/fonts/circe/Circe-Regular.ttf') format('truetype');
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Circe', 'Segoe UI', 'Roboto',
+    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 18px;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+:root {
+  --white: #fff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: Poppins;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+ul,
+li,
+input,
+a {
+  padding: 0;
+  margin: 0;
+}
