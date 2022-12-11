@@ -41,6 +41,9 @@ code {
 
 :root {
   --white: #fff;
+  --input-text-color: #bdbdbd;
+  --accent-color: #24cca7;
+  --login-link-color: #4a56e2;
 }
 
 h1,
