@@ -3,25 +3,25 @@
 @font-face {
   font-family: 'Poppins';
   src: local('Poppins'),
-    url('./assets/fonts/poppins/Poppins-Bold.ttf') format('truetype');
+    url('./shared/fonts/poppins/Poppins-Bold.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Poppins';
   src: local('Poppins'),
-    url('./assets/fonts/poppins/Poppins-Regular.ttf') format('truetype');
+    url('./shared/fonts/poppins/Poppins-Regular.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Circe';
   src: local('Circe'),
-    url('./assets/fonts/circe/Circe-Bold.ttf') format('truetype');
+    url('./shared/fonts/circe/Circe-Bold.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Circe';
   src: local('Circe'),
-    url('./assets/fonts/circe/Circe-Regular.ttf') format('truetype');
+    url('./shared/fonts/circe/Circe-Regular.ttf') format('truetype');
 }
 
 body {
@@ -44,6 +44,13 @@ code {
   --input-text-color: #bdbdbd;
   --accent-color: #24cca7;
   --login-link-color: #4a56e2;
+  --login-page-bg-color: #e7eaf2;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
 }
 
 h1,

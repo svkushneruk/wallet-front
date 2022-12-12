@@ -26,6 +26,7 @@ const RegistrationForm = () => {
             type="email"
             name="email"
             className={css.form__input}
+            placeholder=" "
           />
           <label htmlFor={emailId} className={css.form__lable}>
             E-mail
@@ -38,6 +39,7 @@ const RegistrationForm = () => {
             type="password"
             name="password"
             className={css.form__input}
+            placeholder=" "
           />
           <label htmlFor={passwordId} className={css.form__lable}>
             Password
@@ -50,6 +52,7 @@ const RegistrationForm = () => {
             type="password"
             name="password"
             className={css.form__input}
+            placeholder=" "
           />
           <label htmlFor={confirmPasswordId} className={css.form__lable}>
             Confirm password
@@ -62,6 +65,7 @@ const RegistrationForm = () => {
             type="text"
             name="user"
             className={css.form__input}
+            placeholder=" "
           />
           <label htmlFor={userId} className={css.form__lable}>
             First name{' '}
