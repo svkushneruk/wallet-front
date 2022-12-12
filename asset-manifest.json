@@ -1,21 +1,23 @@
 {
   "files": {
-    "main.css": "/wallet-front/static/css/main.2fdef529.css",
-    "main.js": "/wallet-front/static/js/main.6d9202cd.js",
+    "main.css": "/wallet-front/static/css/main.d24faf9c.css",
+    "main.js": "/wallet-front/static/js/main.9925dbfc.js",
     "static/media/Circe-Regular.ttf": "/wallet-front/static/media/Circe-Regular.814e4dd4329ffdb6c9ed.ttf",
     "static/media/Circe-Bold.ttf": "/wallet-front/static/media/Circe-Bold.63396ee791f60623acbf.ttf",
     "static/media/Poppins-Regular.ttf": "/wallet-front/static/media/Poppins-Regular.35d26b781dc5fda684cc.ttf",
     "static/media/Poppins-Bold.ttf": "/wallet-front/static/media/Poppins-Bold.cdb29a5d7ccf57ff05a3.ttf",
+    "static/media/LoginPageImgDesktop.png": "/wallet-front/static/media/LoginPageImgDesktop.9eddf7712a70a5d1290d.png",
+    "static/media/LoginPageImg.png": "/wallet-front/static/media/LoginPageImg.bf9ee2ea3880266b790b.png",
     "static/media/logo-mobile.svg": "/wallet-front/static/media/logo-mobile.82ae2436f4ce8306bb929c5418bad3e5.svg",
     "index.html": "/wallet-front/index.html",
     "static/media/form-password.svg": "/wallet-front/static/media/form-password.8f25fbc3aaa3260f17245f51372a7947.svg",
     "static/media/form-user.svg": "/wallet-front/static/media/form-user.af348b4c46b5fcf5f0f458df636fcfe8.svg",
     "static/media/form-email.svg": "/wallet-front/static/media/form-email.f35ee611ff6dc6c5b17e5231c72046bd.svg",
-    "main.2fdef529.css.map": "/wallet-front/static/css/main.2fdef529.css.map",
-    "main.6d9202cd.js.map": "/wallet-front/static/js/main.6d9202cd.js.map"
+    "main.d24faf9c.css.map": "/wallet-front/static/css/main.d24faf9c.css.map",
+    "main.9925dbfc.js.map": "/wallet-front/static/js/main.9925dbfc.js.map"
   },
   "entrypoints": [
-    "static/css/main.2fdef529.css",
-    "static/js/main.6d9202cd.js"
+    "static/css/main.d24faf9c.css",
+    "static/js/main.9925dbfc.js"
   ]
 }
