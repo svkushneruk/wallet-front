@@ -1,13 +1,13 @@
-import css from './LoginPage.module.css';
+import css from './RegisterPage.module.css';
 
-import img from '../../images/loginPage/LoginPageImg.png';
-import img2 from '../../images/loginPage/LoginPageImgDesktop.png';
+import img from '../../images/registerPage/user-tablet.png';
+import img2 from '../../images/registerPage/user-desktop.png';
 import lightEllips from '../../images/loginPage/Ellipse2.png';
 import darkEllips from '../../images/loginPage/Ellipse1.png';
 
-import LoginForm from 'components/forms/LoginForm/LoginForm';
+import RegistrationForm from 'components/forms/RegistrationForm/RegistrationForm';
 
-const LoginPage = () => {
+const RegisterPage = () => {
   return (
     <div
       className={css.page}
@@ -34,10 +34,10 @@ const LoginPage = () => {
         </div>
       </div>
       <div className={css.page__formWrap}>
-        <LoginForm />
+        <RegistrationForm />
       </div>
     </div>
   );
 };
 
-export default LoginPage;
+export default RegisterPage;
