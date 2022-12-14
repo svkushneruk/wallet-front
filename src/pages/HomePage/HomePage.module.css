@@ -1,0 +1,4 @@
+.home {
+  background-color: rgba(117, 140, 205, 0.4);
+  backdrop-filter: blur(25px);
+}

@@ -132,11 +132,11 @@
   line-height: 1.5;
   letter-spacing: 1.6px;
 
-  color: var(--login-link-color);
+  color: var(--second-accent-color);
 
   background-color: transparent;
 
-  border: 1px solid var(--login-link-color);
+  border: 1px solid var(--second-accent-color);
   border-radius: 20px;
 
   cursor: pointer;
@@ -148,7 +148,7 @@
 
 .form__link:hover,
 .form__link:focus {
-  background-color: var(--login-link-color);
+  background-color: var(--second-accent-color);
   color: var(--white);
 }
 

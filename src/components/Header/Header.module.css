@@ -1,0 +1,50 @@
+.header {
+  padding: 15px;
+  background: #fff;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo__img {
+  display: block;
+}
+.logo__img + .logo__img {
+  margin-left: 15px;
+}
+
+.auth {
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #bdbdbd;
+}
+
+.auth__img {
+  display: block;
+  margin-right: 8px;
+}
+.auth__name {
+  margin-right: 8px;
+}
+
+.auth__btn {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  color: #bdbdbd;
+  border: none;
+  background: transparent;
+  margin-right: 8px;
+  cursor: pointer;
+}
