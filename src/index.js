@@ -6,7 +6,7 @@ import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter basename="/https://svkushneruk.github.io/wallet-front/home/">
+    <BrowserRouter>
       <App />
     </BrowserRouter>
   </React.StrictMode>
