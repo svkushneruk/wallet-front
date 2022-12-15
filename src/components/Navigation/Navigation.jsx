@@ -24,7 +24,7 @@ const Navigation = () => {
           </div>
 
           <Media
-            query="(min-width: 599px)"
+            query="(min-width: 576px)"
             render={() => <p className={css.menu__text}>Home</p>}
           />
         </NavLink>
@@ -35,13 +35,13 @@ const Navigation = () => {
           </div>
 
           <Media
-            query="(min-width: 599px)"
+            query="(min-width: 576px)"
             render={() => <p className={css.menu__text}>Statistics</p>}
           />
         </NavLink>
 
         <Media
-          query="(max-width: 599px)"
+          query="(max-width: 575px)"
           render={() => (
             <NavLink to="/current" className={getClasses}>
               <div className={css.iconWrap}>

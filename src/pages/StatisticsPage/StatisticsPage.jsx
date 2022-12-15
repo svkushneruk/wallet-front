@@ -5,7 +5,9 @@ import Navigation from 'components/Navigation/Navigation';
 const StatisticsPage = () => {
   return (
     <div className={css.statistics}>
-      <Navigation />
+      <div className="container">
+        <Navigation />
+      </div>
     </div>
   );
 };

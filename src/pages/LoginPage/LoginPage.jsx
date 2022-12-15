@@ -28,8 +28,6 @@ const LoginPage = () => {
             <source srcSet={img} type="image/png" media="(min-width: 540px)" />
             <img src={img} alt="download metamask" />
           </picture>
-
-          {/* <img className={css.page__img} src={img2} alt="Wallet User" /> */}
           <h1 className={css.page__title}>Finance App</h1>
         </div>
       </div>

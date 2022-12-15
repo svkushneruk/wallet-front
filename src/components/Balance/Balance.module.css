@@ -1,0 +1,19 @@
+.balance {
+    background-color: var(--white);
+    border-radius: 30px;
+    padding: 8px 40px 11px;
+}
+
+.balance__title {
+        font-size: 12px;
+        line-height: 1.5;
+        text-transform: uppercase;    
+        color: var(--balance-title-color);
+        margin-bottom: 12px;
+}
+
+.balance__price {
+    font-style: normal;
+    font-size: 30px;
+    line-height: 1.5;
+}
