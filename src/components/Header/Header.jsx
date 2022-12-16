@@ -11,7 +11,7 @@ const Header = () => {
     <header className={css.header}>
       <div className="container">
         <div className={css.wrap}>
-          <a className={css.logo} href="/">
+          <a className={css.logo} href="/home">
             <img className={css.logo__img} src={Wallet} alt="Wallet" />
             <img className={css.logo__img} src={WalletText} alt="WalletText" />
           </a>

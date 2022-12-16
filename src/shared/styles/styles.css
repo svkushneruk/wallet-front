@@ -11,19 +11,14 @@
 
 /* Medium devices (tablets, 768px and up) */
 @media screen and (min-width: 768px) {
-    .container {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
+
 }
    
 
 /* Large devices (desktops, 992px and up) */
 @media screen and (min-width: 992px) {
     .container {
-        width: 956px;
-        padding-left: 18px;
-        padding-right: 18px;
+        width: 952px;
     }
 }
 

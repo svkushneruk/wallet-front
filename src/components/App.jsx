@@ -7,6 +7,7 @@ import StatisticsPage from 'pages/StatisticsPage/StatisticsPage';
 import Layout from './Layout/Layout';
 import LoginPage from 'pages/LoginPage/LoginPage';
 import RegisterPage from 'pages/RegisterPage/RegisterPage';
+import CurrencyPage from 'pages/CurrencyPage/CurrencyPage';
 
 export const App = () => {
   return (
@@ -15,6 +16,7 @@ export const App = () => {
         <Route path="/" element={<Layout />}>
           <Route path="home" element={<HomePage />} />
           <Route path="diagram" element={<StatisticsPage />} />
+          <Route path="currency" element={<CurrencyPage />} />
         </Route>
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />

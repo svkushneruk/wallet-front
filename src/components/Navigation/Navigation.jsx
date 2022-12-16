@@ -43,7 +43,7 @@ const Navigation = () => {
         <Media
           query="(max-width: 575px)"
           render={() => (
-            <NavLink to="/current" className={getClasses}>
+            <NavLink to="/currency" className={getClasses}>
               <div className={css.iconWrap}>
                 <FaDollarSign />
               </div>

@@ -4,9 +4,13 @@
     line-height: 1.5;
 }
 
+.transactionsList.red {
+}
+
 .transactionsList__item {
     background: var(--white);
     border-radius: 10px;
+    overflow: hidden;
 }
 
 .transactionsList__item + .transactionsList__item {
@@ -15,19 +19,39 @@
 
 .transactionsList__link {
     color: black;
+    display: block;
 }
 
 .cardList__item {
     padding: 12px 20px;
     display: flex;
     justify-content: space-between;
-    align-items: center;    
+    align-items: center; 
 }
+
 
 .cardList__item:not(:last-child) {
     border-bottom: 1px solid #DCDCDF;
 }
 
+.cardList__item.dark {
+    border-left: 5px solid #FF6596;
+}
+
+.cardList__item.light {
+    border-left: 5px solid var(--accent-color);
+}
+
 .cardList__title {
     font-weight: 700;
 }
+
+.cardList__text.light {
+    color: var(--accent-color);
+}
+
+.cardList__text.dark {
+    color: #FF6596;
+}
+
+

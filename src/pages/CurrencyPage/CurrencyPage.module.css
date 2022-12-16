@@ -1,0 +1,9 @@
+.page {
+    padding-top: 40px;
+    
+}
+
+.wrap {
+display: flex;
+    justify-content: center;
+}
