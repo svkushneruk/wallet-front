@@ -29,7 +29,7 @@ const Navigation = () => {
           />
         </NavLink>
 
-        <NavLink to="/statistics" className={getClasses}>
+        <NavLink to="/diagram" className={getClasses}>
           <div className={css.iconWrap}>
             <FaChartLine />
           </div>

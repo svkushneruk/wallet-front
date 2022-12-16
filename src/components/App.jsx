@@ -14,7 +14,7 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="home" element={<HomePage />} />
-          <Route path="statistics" element={<StatisticsPage />} />
+          <Route path="diagram" element={<StatisticsPage />} />
         </Route>
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />

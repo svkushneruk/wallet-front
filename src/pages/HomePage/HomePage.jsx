@@ -6,6 +6,7 @@ import Navigation from 'components/Navigation/Navigation';
 import Balance from 'components/Balance/Balance';
 import Currency from 'components/Currency/Currency';
 import Transactions from 'components/Transactions/Transactions';
+import TransactionsCards from 'components/TransactionsCards/TransactionsCards';
 
 const HomePage = () => {
   return (
@@ -28,7 +29,11 @@ const HomePage = () => {
             />
           </div>
           <div className={css.board}>
-            <Transactions />
+            <Media
+              query="(max-width: 575px)"
+              render={() => <TransactionsCards />}
+            />
+            <Media query="(min-width: 576px)" render={() => <Transactions />} />
           </div>
         </div>
       </div>

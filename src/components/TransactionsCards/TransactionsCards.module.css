@@ -1,0 +1,33 @@
+.transactionsList {
+    margin-top: 32px;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.transactionsList__item {
+    background: var(--white);
+    border-radius: 10px;
+}
+
+.transactionsList__item + .transactionsList__item {
+    margin-top: 12px;    
+}
+
+.transactionsList__link {
+    color: black;
+}
+
+.cardList__item {
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+}
+
+.cardList__item:not(:last-child) {
+    border-bottom: 1px solid #DCDCDF;
+}
+
+.cardList__title {
+    font-weight: 700;
+}

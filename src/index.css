@@ -71,7 +71,17 @@ p,
 ul,
 li,
 input,
-a {
+a,
+ul,
+li {
   padding: 0;
   margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
 }
