@@ -1,7 +1,8 @@
-import css from './HomePage.module.css';
-
+import { useState } from 'react';
 import Media from 'react-media';
 import { nanoid } from 'nanoid';
+
+import css from './HomePage.module.css';
 
 import Navigation from 'components/Navigation/Navigation';
 import Balance from 'components/Balance/Balance';
@@ -9,8 +10,10 @@ import Currency from 'components/Currency/Currency';
 import Transactions from 'components/Transactions/Transactions';
 import TransactionsCards from 'components/TransactionsCards/TransactionsCards';
 import AddButton from 'components/AddButton/AddButton';
+import Modal from 'components/Modal/Modal';
+import AddTransaction from 'components/AddTransaction/AddTransaction';
 
-import * as monoApi from '../../shared/api/mono';
+// import * as monoApi from '../../shared/api/mono';
 
 const transactions = [
   {
@@ -61,11 +64,24 @@ const transactions = [
 ];
 
 const HomePage = () => {
+  const [isShowModal, setIsShowModal] = useState(false);
+
+  const showModal = () => {
+    setIsShowModal(true);
+  };
+
+  const closeModal = () => {
+    setIsShowModal(false);
+  };
+
   return (
     <div className={css.home}>
       <div className="container">
         <div className={css.pageWrap}>
-          <Media query="(min-width: 576px)" render={() => <AddButton />} />
+          <Media
+            query="(min-width: 576px)"
+            render={() => <AddButton onClick={showModal} />}
+          />
           <div className={css.content}>
             <div className={css.contentInner}>
               <Navigation />
@@ -93,7 +109,16 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-      <Media query="(max-width: 575px)" render={() => <AddButton />} />
+      <Media
+        query="(max-width: 575px)"
+        render={() => <AddButton onClick={showModal} />}
+      />
+
+      {isShowModal && (
+        <Modal>
+          <AddTransaction onClose={closeModal} />
+        </Modal>
+      )}
     </div>
   );
 };
