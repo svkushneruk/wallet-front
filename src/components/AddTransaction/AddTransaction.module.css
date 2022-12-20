@@ -25,6 +25,18 @@
 
 .form__checkLabel {
     cursor: pointer;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #E0E0E0;
+}
+
+.form__checkLabel_income {
+    color: var(--accent-color);
+}
+
+.form__checkLabel_expense {
+    color: #FF6596;
 }
 
 .chekOut {
@@ -41,11 +53,11 @@
 .chekInner {
     position: absolute;
     width: 44px;
-    height: 44px;
-    left: -2px;
+    height: 44px;    
     top: -2px;
-    background: var(--accent-color);    
-    box-shadow: 0px 6px 15px rgba(36, 204, 167, 0.5);
+    left: 37px;
+    background: #FF6596;
+    box-shadow: 0px 6px 15px rgba(255, 101, 150, 0.5);    
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -53,9 +65,9 @@
 }
 
 .form__checkbox:checked + .chekInner {
-    left: 28px;
-    background: #FF6596;
-    box-shadow: 0px 6px 15px rgba(255, 101, 150, 0.5);
+    left: -2px;
+    background: var(--accent-color);
+    box-shadow: 0px 6px 15px rgba(36, 204, 167, 0.5);
 }
 
 .form__checkbox {
@@ -67,7 +79,7 @@
 }
 
 .form__text {
-    padding: 0 20px 8px 20px;
+    padding: 4px 20px 4px 20px;
     width: 100%;
     border: none;
     border-bottom: 1px solid #BDBDBD;
@@ -80,7 +92,7 @@
 
 .form__input input {
     display: block;
-    padding: 0 20px 8px 20px;
+    padding: 4px 20px 4px 20px;
     height: 100%;
     width: 100%;
     border: none;
@@ -110,6 +122,8 @@
     border-bottom: 1px solid #BDBDBD;
     color: #BDBDBD;
     resize: none;
+    font-size: 18px;
+    line-height: 1.5;
 }
 
 .form__buttons {
@@ -119,10 +133,10 @@
 }
 
 .form__btn {
+    height: 50px;
     padding: 13px;
     font-weight: 400;
     font-size: 18px;
-    line-height: 1.5;
     text-align: center;
     letter-spacing: 0.1em;
     text-transform: uppercase;
