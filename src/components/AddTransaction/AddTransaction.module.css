@@ -78,6 +78,13 @@
     overflow: hidden;
 }
 
+.form__select {
+    width: 100%;
+        font-size: 18px;
+        border: none;
+        outline: none;
+}
+
 .form__text {
     padding: 4px 20px 4px 20px;
     width: 100%;

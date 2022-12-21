@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { Formik, Form, Field } from 'formik';
 import Datetime from 'react-datetime';
 import 'react-datetime/css/react-datetime.css';
 
@@ -12,7 +11,12 @@ import css from './AddTransaction.module.css';
 import categories from './categories';
 
 const AddTransaction = ({ onClose }) => {
-  const [isChecked, setIsChecked] = useState(true);
+  const [state, setState] = useState({
+    isChecked: true,
+    category: '',
+    sum: 0,
+    date: '',
+  });
 
   const elements = categories.map(item => (
     <option key={item} value={item}>
@@ -21,104 +25,127 @@ const AddTransaction = ({ onClose }) => {
   ));
 
   const handleCheck = () => {
-    setIsChecked(!isChecked);
+    setState(prevState => ({
+      ...prevState,
+      isChecked: !prevState.isChecked,
+    }));
   };
 
-  const handleSubmit = (values, { resetForm }) => {
-    console.log(values);
-    // resetForm();
+  const onDateChange = e => {
+    setState(prevState => ({
+      ...prevState,
+      date: e._d,
+    }));
   };
+
+  const onHandleChange = ({ target }) => {
+    setState(prevState => ({
+      ...prevState,
+      [target.name]: target.value,
+    }));
+  };
+
+  const onSubmit = e => {
+    e.preventDefault();
+    console.log({ ...state });
+  };
+
+  const { isChecked, category, sum, date } = state;
 
   return (
     <div className={css.wrap}>
       <h3 className={css.title}>Add transaction</h3>
-      <Formik
-        initialValues={{
-          isProfit: true,
-          sum: '',
-          time: '',
-          comment: '',
-          category: '',
-        }}
-        onSubmit={handleSubmit}
-      >
-        <Form className={css.form}>
-          <div className={`${css.form__group} ${css.form__groupChek}`}>
-            <label
-              htmlFor="profit"
-              className={`${css.form__checkLabel} ${
-                isChecked ? css.form__checkLabel_income : false
-              }`}
-            >
-              Income
-            </label>
-            <label htmlFor="profit" className={css.chekOut}>
-              <Field
-                className={css.form__checkbox}
-                checked={isChecked}
-                type="checkbox"
-                name="isProfit"
-                id="profit"
-                onChange={handleCheck}
-              />
-              <div className={css.chekInner}>
-                {isChecked ? <Plus /> : <Minus />}
-              </div>
-            </label>
-            <label
-              htmlFor="profit"
-              className={`${css.form__checkLabel} ${
-                isChecked ? false : css.form__checkLabel_expense
-              }`}
-            >
-              Expense
-            </label>
-          </div>
-          <Field name="category" as="select">
+
+      <form className={css.form} onSubmit={onSubmit}>
+        <div className={`${css.form__group} ${css.form__groupChek}`}>
+          <label
+            htmlFor="profit"
+            className={`${css.form__checkLabel} ${
+              isChecked ? css.form__checkLabel_income : false
+            }`}
+          >
+            Income
+          </label>
+          <label htmlFor="profit" className={css.chekOut}>
+            <input
+              className={css.form__checkbox}
+              checked={isChecked}
+              type="checkbox"
+              name="isProfit"
+              id="profit"
+              onChange={handleCheck}
+            />
+            <div className={css.chekInner}>
+              {isChecked ? <Plus /> : <Minus />}
+            </div>
+          </label>
+          <label
+            htmlFor="profit"
+            className={`${css.form__checkLabel} ${
+              isChecked ? false : css.form__checkLabel_expense
+            }`}
+          >
+            Expense
+          </label>
+        </div>
+
+        {!isChecked && (
+          <select
+            className={css.form__select}
+            name="category"
+            onChange={onHandleChange}
+          >
             {elements}
-          </Field>
-          <div className={css.form__group}>
-            <Field
-              type="number"
-              name="sum"
-              className={css.form__text}
-              placeholder="0.00"
-            />
-          </div>
-          <div className={`${css.form__group} ${css.form__date}`}>
-            <Datetime
-              className={`${css.form__input} ${css.form__date}`}
-              closeOnSelect={true}
-              timeFormat={false}
-              dateFormat={'DD.MM.YYYY'}
-            />
-            <Icon className={css.form__icon} />
-          </div>
-          <div className={css.form__group}>
-            <Field
-              component="textarea"
-              name="comment"
-              placeholder="Comment"
-              className={css.form__textarea}
-            ></Field>
-          </div>
-          <div className={css.form__buttons}>
-            <button
-              type="submit"
-              className={`${css.form__btn} ${css.form__btn_add}`}
-            >
-              Add
-            </button>
-            <button
-              type="button"
-              className={`${css.form__btn} ${css.form__btn_cancel}`}
-              onClick={onClose}
-            >
-              Cancel
-            </button>
-          </div>
-        </Form>
-      </Formik>
+          </select>
+        )}
+
+        <div className={css.form__group}>
+          <input
+            type="number"
+            name="sum"
+            className={css.form__text}
+            placeholder="0.00"
+            onChange={onHandleChange}
+          />
+        </div>
+
+        <div className={`${css.form__group} ${css.form__date}`}>
+          <Datetime
+            className={`${css.form__input} ${css.form__date}`}
+            closeOnSelect={true}
+            timeFormat={false}
+            dateFormat={'DD.MM.YYYY'}
+            onChange={onDateChange}
+          />
+          <Icon className={css.form__icon} />
+        </div>
+
+        <div className={css.form__group}>
+          <textarea
+            component="textarea"
+            name="comment"
+            placeholder="Comment"
+            className={css.form__textarea}
+            onChange={onHandleChange}
+          ></textarea>
+        </div>
+
+        <div className={css.form__buttons}>
+          <button
+            type="submit"
+            className={`${css.form__btn} ${css.form__btn_add}`}
+          >
+            Add
+          </button>
+          <button
+            type="button"
+            className={`${css.form__btn} ${css.form__btn_cancel}`}
+            onClick={onClose}
+          >
+            Cancel
+          </button>
+        </div>
+      </form>
     </div>
   );
 };
