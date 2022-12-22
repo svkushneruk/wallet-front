@@ -12,7 +12,7 @@ import categories from './categories';
 
 const AddTransaction = ({ onClose }) => {
   const [state, setState] = useState({
-    isChecked: true,
+    income: true,
     category: '',
     sum: 0,
     date: '',
@@ -27,7 +27,7 @@ const AddTransaction = ({ onClose }) => {
   const handleCheck = () => {
     setState(prevState => ({
       ...prevState,
-      isChecked: !prevState.isChecked,
+      income: !prevState.income,
     }));
   };
 
@@ -50,7 +50,7 @@ const AddTransaction = ({ onClose }) => {
     console.log({ ...state });
   };
 
-  const { isChecked, category, sum, date } = state;
+  const { income } = state;
 
   return (
     <div className={css.wrap}>
@@ -61,7 +61,7 @@ const AddTransaction = ({ onClose }) => {
           <label
             htmlFor="profit"
             className={`${css.form__checkLabel} ${
-              isChecked ? css.form__checkLabel_income : false
+              income ? css.form__checkLabel_income : false
             }`}
           >
             Income
@@ -69,27 +69,25 @@ const AddTransaction = ({ onClose }) => {
           <label htmlFor="profit" className={css.chekOut}>
             <input
               className={css.form__checkbox}
-              checked={isChecked}
+              checked={income}
               type="checkbox"
               name="isProfit"
               id="profit"
               onChange={handleCheck}
             />
-            <div className={css.chekInner}>
-              {isChecked ? <Plus /> : <Minus />}
-            </div>
+            <div className={css.chekInner}>{income ? <Plus /> : <Minus />}</div>
           </label>
           <label
             htmlFor="profit"
             className={`${css.form__checkLabel} ${
-              isChecked ? false : css.form__checkLabel_expense
+              income ? false : css.form__checkLabel_expense
             }`}
           >
             Expense
           </label>
         </div>
 
-        {!isChecked && (
+        {!income && (
           <select
             className={css.form__select}
             name="category"

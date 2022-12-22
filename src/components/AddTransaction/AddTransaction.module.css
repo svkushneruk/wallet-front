@@ -1,7 +1,8 @@
 .wrap {
     padding-left: 20px;
     padding-right: 20px;
-    padding-top: 20px;   
+    padding-top: 20px; 
+    padding-bottom: 20px  ;  
 }
 
 .title {
@@ -80,9 +81,10 @@
 
 .form__select {
     width: 100%;
-        font-size: 18px;
-        border: none;
-        outline: none;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    margin-bottom: 20px;
 }
 
 .form__text {
@@ -112,6 +114,7 @@
 
 .form__date {
     position: relative;
+    width: 100%;
 }
 
 .form__icon {
