@@ -1,0 +1,152 @@
+.board {
+  max-width: 336px;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 778px) {
+  .board {
+    /* width: 100%; */
+    max-width: 100%;
+  }
+}
+
+@media screen and (min-width: 778px) and (max-width: 991px) {
+  .diagram__controls {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .diagram__controls {
+    display: flex;
+  }
+}
+
+.diagram {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  max-height: 336px;
+}
+
+@media screen and (min-width: 778px) and (max-width: 1279px) {
+  .diagram {
+    max-height: 288px;
+  }
+}
+
+@media screen and (min-width: 778px) {
+  .content {
+    flex: 1 1 auto;
+  }
+}
+
+@media screen and (min-width: 778px) and (max-width: 991px) {
+  .content {
+    padding-left: 40px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .content {
+    padding-left: 20px;
+  }
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table__head_row {
+  background: #ffffff;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #000000;
+}
+
+.table__head_th {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.table__head_th:first-child {
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.table__head_th:last-child {
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  text-align: right;
+  padding-right: 40px;
+}
+
+.table__row {
+  border-bottom: 1px solid #dcdcdf;
+  box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.6);
+}
+
+.table__td {
+  position: relative;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.table__td:first-child {
+  padding-left: 60px;
+}
+.table__td:last-child {
+  text-align: right;
+}
+
+.table__body .table__td:last-child {
+  padding-right: 40px;
+}
+
+.table__span {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
+.total {
+  margin-top: 16px;
+}
+
+.total__price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #000000;
+}
+
+.total__price + .total__price {
+  margin-top: 15px;
+}
+
+.total__current {
+  padding-right: 20px;
+}
+
+.total__expenses {
+  color: #ff6596;
+}
+
+.total__income {
+  color: #24cca7;
+}

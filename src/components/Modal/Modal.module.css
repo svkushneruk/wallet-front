@@ -15,6 +15,7 @@
     min-height: 300px;
     min-width: 300px;
     width: 100%;
+    max-width: 540px;
     padding: 12px;
     background-color: #fff;
     border-radius: 3px;
@@ -23,7 +24,6 @@
 
 @media screen and (min-width: 768px) {
     .modalContent {
-        width: 540px;
         border-radius: 20px
     }
 }

@@ -8,26 +8,22 @@ import { ReactComponent as Minus } from '../../images/homePage/minus.svg';
 
 import css from './AddTransaction.module.css';
 
+import Select from 'components/Select/Select';
+
 import categories from './categories';
 
 const AddTransaction = ({ onClose }) => {
   const [state, setState] = useState({
-    income: true,
-    category: '',
-    sum: 0,
-    date: '',
+    isIncome: true,
+    category: 'Other expences',
+    sum: '',
+    date: new Date(),
   });
-
-  const elements = categories.map(item => (
-    <option key={item} value={item}>
-      {item}
-    </option>
-  ));
 
   const handleCheck = () => {
     setState(prevState => ({
       ...prevState,
-      income: !prevState.income,
+      isIncome: !prevState.isIncome,
     }));
   };
 
@@ -45,12 +41,26 @@ const AddTransaction = ({ onClose }) => {
     }));
   };
 
+  const onGetCategory = newCategory => {
+    console.log(newCategory);
+    setState(prevState => ({
+      ...prevState,
+      category: newCategory,
+    }));
+  };
+
   const onSubmit = e => {
     e.preventDefault();
     console.log({ ...state });
+    setState(prevState => ({
+      ...prevState,
+      category: 'Other expences',
+      sum: '',
+      date: new Date(),
+    }));
   };
 
-  const { income } = state;
+  const { isIncome, category, sum } = state;
 
   return (
     <div className={css.wrap}>
@@ -61,7 +71,7 @@ const AddTransaction = ({ onClose }) => {
           <label
             htmlFor="profit"
             className={`${css.form__checkLabel} ${
-              income ? css.form__checkLabel_income : false
+              isIncome ? css.form__checkLabel_income : false
             }`}
           >
             Income
@@ -69,53 +79,58 @@ const AddTransaction = ({ onClose }) => {
           <label htmlFor="profit" className={css.chekOut}>
             <input
               className={css.form__checkbox}
-              checked={income}
+              checked={isIncome}
               type="checkbox"
               name="isProfit"
               id="profit"
               onChange={handleCheck}
             />
-            <div className={css.chekInner}>{income ? <Plus /> : <Minus />}</div>
+            <div className={css.chekInner}>
+              {isIncome ? <Plus /> : <Minus />}
+            </div>
           </label>
           <label
             htmlFor="profit"
             className={`${css.form__checkLabel} ${
-              income ? false : css.form__checkLabel_expense
+              isIncome ? false : css.form__checkLabel_expense
             }`}
           >
             Expense
           </label>
         </div>
 
-        {!income && (
-          <select
-            className={css.form__select}
-            name="category"
-            onChange={onHandleChange}
-          >
-            {elements}
-          </select>
+        {!isIncome && (
+          <Select
+            items={categories}
+            currentItem={category}
+            onHandleChange={onGetCategory}
+          />
         )}
 
         <div className={css.form__group}>
-          <input
-            type="number"
-            name="sum"
-            className={css.form__text}
-            placeholder="0.00"
-            onChange={onHandleChange}
-          />
-        </div>
+          <div className={css.form__group_wrap}>
+            <input
+              type="number"
+              name="sum"
+              className={`${css.form__text} ${css.form__item}`}
+              placeholder="0.00"
+              onChange={onHandleChange}
+              value={sum}
+            />
 
-        <div className={`${css.form__group} ${css.form__date}`}>
-          <Datetime
-            className={`${css.form__input} ${css.form__date}`}
-            closeOnSelect={true}
-            timeFormat={false}
-            dateFormat={'DD.MM.YYYY'}
-            onChange={onDateChange}
-          />
-          <Icon className={css.form__icon} />
+            <div
+              className={`${css.form__group} ${css.form__date} ${css.form__item}`}
+            >
+              <Datetime
+                className={`${css.form__input} ${css.form__date}`}
+                closeOnSelect={true}
+                timeFormat={false}
+                dateFormat={'DD.MM.YYYY'}
+                onChange={onDateChange}
+              />
+              <Icon className={css.form__icon} />
+            </div>
+          </div>
         </div>
 
         <div className={css.form__group}>

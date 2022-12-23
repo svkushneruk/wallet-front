@@ -1,5 +1,35 @@
 .backdrop {
-    background: rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(25px);
-    min-height: 100vh;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(25px);
+  min-height: 100vh;
+}
+
+.wrap {
+  display: flex;
+}
+
+@media screen and (max-width: 991px) {
+  .wrap {
+    flex-direction: column;
+  }
+}
+
+.content {
+  padding-top: 40px;
+}
+
+@media screen and (min-width: 576px) and (max-width: 992px) {
+  .content {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .content {
+    padding-right: 50px;
+    border-right: 1px solid #e7e5f2;
+    box-shadow: -1px 0px 0px rgba(0, 0, 0, 0.05),
+      1px 0px 0px rgba(255, 255, 255, 0.6), 1px 0px 0px rgba(0, 0, 0, 0.05), 0;
+  }
 }
